@@ -43,3 +43,6 @@ prisma/migrations/dev.db-journal
 *.swp
 *.swo
 *~
+
+# Local Netlify folder
+.netlify
