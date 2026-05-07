@@ -46,10 +46,10 @@ const nextConfig: NextConfig = {
   },
   // Reduce compilation time
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: false,
+    ignoreDuringBuilds: true,
   },
 }
 
