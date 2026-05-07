@@ -3,7 +3,9 @@ import path from 'path'
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [],
   },
   // Expose DEMO_MODE to client components via NEXT_PUBLIC_DEMO_MODE (Req 11.2)
