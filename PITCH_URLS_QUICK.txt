@@ -1,0 +1,143 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║                    APPEN PITCH — ALL WORKING PAGES & URLS                     ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+✅ 8 WORKING PAGES FOR YOUR PITCH:
+
+1. LANDING PAGE
+   URL: https://localhost:3000
+   Show: 3D orbit, how it works, problem & solution
+
+2. MARKETPLACE
+   URL: https://localhost:3000/marketplace
+   Show: Offer book, reputation badges, accept offer
+
+3. TRADE DETAIL ⭐ THE MAGIC
+   URL: https://localhost:3000/trade/[TRADE_ID]
+   Show: Proof uploader, OCR results, CONFETTI 🎉
+   NOTE: Get TRADE_ID from marketplace (accept an offer)
+
+4. DISPUTES (QUEUE)
+   URL: https://localhost:3000/disputes
+   Show: Case cards, priority badges, case list
+
+5. DISPUTE DETAIL
+   URL: https://localhost:3000/disputes/[DISPUTE_ID]
+   Show: Evidence bundle, AI assessment
+   NOTE: Get DISPUTE_ID from disputes page (click a case)
+
+6. ADMIN DASHBOARD
+   URL: https://localhost:3000/admin
+   Show: Audit log, metrics, chain visualizer
+
+7. LEADERBOARD
+   URL: https://localhost:3000/leaderboard
+   Show: Animated podium, reputation scores
+
+8. ANALYTICS
+   URL: https://localhost:3000/analytics
+   Show: 5 real-time charts, demo control panel
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 PITCH FLOW (IN ORDER):
+
+0:00–0:05   Landing Page
+            https://localhost:3000
+
+0:05–0:30   Landing Page
+            https://localhost:3000
+
+0:30–0:45   Landing Page
+            https://localhost:3000
+
+0:45–1:15   Marketplace
+            https://localhost:3000/marketplace
+
+1:15–2:30   Trade Detail ⭐ CONFETTI MOMENT
+            https://localhost:3000/trade/[TRADE_ID]
+
+2:30–3:15   Disputes
+            https://localhost:3000/disputes
+
+3:15–3:30   Dispute Detail
+            https://localhost:3000/disputes/[DISPUTE_ID]
+
+3:30–4:00   Admin Dashboard
+            https://localhost:3000/admin
+
+4:00–4:15   Leaderboard
+            https://localhost:3000/leaderboard
+
+4:15–4:30   Analytics
+            https://localhost:3000/analytics
+
+4:30–5:00   Landing Page
+            https://localhost:3000
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔧 HOW TO GET TRADE ID:
+
+1. Go to: https://localhost:3000/marketplace
+2. Click on any offer
+3. Click "Accept Offer"
+4. You'll be redirected to: https://localhost:3000/trade/[TRADE_ID]
+5. Copy the TRADE_ID from the URL
+6. Use it in your pitch
+
+════════════════════════════════════════════════════════════════════════════════
+
+🔧 HOW TO GET DISPUTE ID:
+
+1. Go to: https://localhost:3000/disputes
+2. Click on any case card
+3. You'll be redirected to: https://localhost:3000/disputes/[DISPUTE_ID]
+4. Copy the DISPUTE_ID from the URL
+5. Use it in your pitch
+
+════════════════════════════════════════════════════════════════════════════════
+
+📋 PRE-DEMO CHECKLIST:
+
+Infrastructure:
+  ☐ Docker running: docker compose up -d
+  ☐ Database migrated: npx prisma migrate dev
+  ☐ Database seeded: npx prisma db seed
+  ☐ Dev server running: npm run dev
+  ☐ Demo data loaded: curl http://localhost:3000/api/analytics/demo-seed
+
+Browser:
+  ☐ All URLs bookmarked
+  ☐ Trade ID ready (from marketplace)
+  ☐ Dispute ID ready (from disputes page)
+  ☐ Demo receipts ready (public/demo/)
+
+Presentation:
+  ☐ Full run-through completed
+  ☐ Timing practiced
+  ☐ Confidence is high 🚀
+
+════════════════════════════════════════════════════════════════════════════════
+
+⚠️ COMMON ISSUES:
+
+Issue: "Trade not found" on /trade/[id]
+Fix: Go to marketplace, accept an offer, copy the trade ID
+
+Issue: "Wallet Required" on trade page
+Fix: Click "Demo Login" in navbar, select a wallet
+
+Issue: No disputes showing
+Fix: Create a trade, mark as paid, raise a dispute
+
+Issue: Pages loading slowly
+Fix: Make sure dev server is running (npm run dev)
+
+════════════════════════════════════════════════════════════════════════════════
+
+Good luck with your pitch! 🚀
+
+════════════════════════════════════════════════════════════════════════════════

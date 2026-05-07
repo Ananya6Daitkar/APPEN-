@@ -1,0 +1,299 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum TradeState {
+  CREATED
+  FUNDED
+  MARKED_PAID
+  UNDER_REVIEW
+  DISPUTED
+  RELEASED
+  REFUNDED
+  CANCELLED
+}
+
+enum VerificationStatus {
+  VERIFIED
+  NEEDS_REVIEW
+  SUSPICIOUS
+}
+
+enum DisputeDecision {
+  RELEASE
+  REFUND
+  PENDING
+}
+
+enum NotificationChannel {
+  IN_APP
+  EMAIL
+}
+
+enum AuditActionType {
+  USER_CREATED
+  SESSION_CREATED
+  SESSION_INVALIDATED
+  OFFER_CREATED
+  OFFER_CANCELLED
+  TRADE_CREATED
+  TRADE_STATE_CHANGED
+  PROOF_UPLOADED
+  OCR_COMPLETED
+  RISK_SCORED
+  DISPUTE_CREATED
+  DISPUTE_ASSIGNED
+  DISPUTE_RESOLVED
+  REPUTATION_UPDATED
+  KYC_SUBMITTED
+  KYC_APPROVED
+  USER_SUSPENDED
+  RISK_CONFIG_CHANGED
+  NOTIFICATION_FAILED
+  AUDIT_WRITE_FAILED
+}
+
+// ─── User ─────────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  walletAddress String    @unique
+  email         String?   @unique
+  emailVerified Boolean   @default(false)
+  kycTier       Int       @default(0)
+  kycDocRef     String?
+  isSuspended   Boolean   @default(false)
+  suspendedAt   DateTime?
+  suspendedBy   String?
+  suspendReason String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  reputation     Reputation?
+  offersAsSeller Offer[]        @relation("SellerOffers")
+  tradesAsBuyer  Trade[]        @relation("BuyerTrades")
+  tradesAsSeller Trade[]        @relation("SellerTrades")
+  resolverCases  ResolverCase[]
+  notifications  Notification[]
+  auditLogs      AuditLog[]     @relation("ActorLogs")
+  riskScores     RiskScore[]
+}
+
+// ─── Reputation ───────────────────────────────────────────────────────────────
+
+model Reputation {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  score       Int      @default(500)
+  totalTrades Int      @default(0)
+  totalVolume Decimal  @default(0)
+  disputeCount Int     @default(0)
+  updatedAt   DateTime @updatedAt
+
+  user   User              @relation(fields: [userId], references: [id])
+  events ReputationEvent[]
+}
+
+model ReputationEvent {
+  id           String   @id @default(cuid())
+  reputationId String
+  tradeId      String
+  delta        Int
+  reason       String
+  createdAt    DateTime @default(now())
+
+  reputation Reputation @relation(fields: [reputationId], references: [id])
+}
+
+// ─── Offer ────────────────────────────────────────────────────────────────────
+
+model Offer {
+  id           String   @id @default(cuid())
+  sellerId     String
+  stablecoin   String
+  amount       Decimal
+  fiatCurrency String
+  fiatRate     Decimal
+  paymentRails String[]
+  isActive     Boolean  @default(true)
+  onChainId    String?
+  txHash       String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  seller User   @relation("SellerOffers", fields: [sellerId], references: [id], onDelete: Cascade)
+  trade  Trade?
+}
+
+// ─── Trade ────────────────────────────────────────────────────────────────────
+
+model Trade {
+  id                     String     @id @default(cuid())
+  offerId                String     @unique
+  buyerId                String
+  sellerId               String
+  stablecoin             String
+  amount                 Decimal
+  fiatCurrency           String
+  fiatRate               Decimal
+  state                  TradeState @default(CREATED)
+  onChainId              String?
+  challengeWindowSeconds Int        @default(1800)
+  markedPaidAt           DateTime?
+  challengeExpiresAt     DateTime?
+  releasedAt             DateTime?
+  refundedAt             DateTime?
+  createdAt              DateTime   @default(now())
+  updatedAt              DateTime   @updatedAt
+
+  offer    Offer      @relation(fields: [offerId], references: [id])
+  buyer    User       @relation("BuyerTrades", fields: [buyerId], references: [id])
+  seller   User       @relation("SellerTrades", fields: [sellerId], references: [id])
+  proofs   Proof[]
+  dispute  Dispute?
+  auditLogs AuditLog[] @relation("TradeLogs")
+}
+
+// ─── Proof ────────────────────────────────────────────────────────────────────
+
+model Proof {
+  id            String   @id @default(cuid())
+  tradeId       String
+  uploaderId    String
+  evidenceHash  String
+  storageKey    String
+  mimeType      String
+  fileSizeBytes Int
+  createdAt     DateTime @default(now())
+
+  trade     Trade      @relation(fields: [tradeId], references: [id])
+  ocrResult OCRResult?
+  riskScore RiskScore?
+}
+
+// ─── OCRResult ────────────────────────────────────────────────────────────────
+
+model OCRResult {
+  id                  String             @id @default(cuid())
+  proofId             String             @unique
+  amount              Decimal?
+  currency            String?
+  timestamp           DateTime?
+  transactionId       String?
+  payerName           String?
+  payeeName           String?
+  paymentRail         String?
+  bankName            String?
+  fieldConfidences    Json
+  overallConfidence   Float
+  verificationStatus  VerificationStatus
+  explanation         String
+  resolverSummary     String
+  rawProviderResponse Json?
+  createdAt           DateTime           @default(now())
+
+  proof Proof @relation(fields: [proofId], references: [id])
+}
+
+// ─── RiskScore ────────────────────────────────────────────────────────────────
+
+model RiskScore {
+  id             String   @id @default(cuid())
+  proofId        String   @unique
+  userId         String
+  trustScore     Int
+  recommendation String
+  fraudFlags     Json
+  subScores      Json
+  auditPayload   Json
+  createdAt      DateTime @default(now())
+
+  proof Proof @relation(fields: [proofId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
+}
+
+// ─── Dispute ──────────────────────────────────────────────────────────────────
+
+model Dispute {
+  id          String          @id @default(cuid())
+  tradeId     String          @unique
+  raisedById  String
+  decision    DisputeDecision @default(PENDING)
+  createdAt   DateTime        @default(now())
+  resolvedAt  DateTime?
+
+  trade        Trade         @relation(fields: [tradeId], references: [id])
+  resolverCase ResolverCase?
+}
+
+model ResolverCase {
+  id           String          @id @default(cuid())
+  disputeId    String          @unique
+  assignedToId String?
+  assignedAt   DateTime?
+  escalatedAt  DateTime?
+  decision     DisputeDecision @default(PENDING)
+  rationale    String?
+  aiSummary    String?
+  resolvedAt   DateTime?
+  createdAt    DateTime        @default(now())
+
+  dispute    Dispute @relation(fields: [disputeId], references: [id])
+  assignedTo User?   @relation(fields: [assignedToId], references: [id])
+}
+
+// ─── Notification ─────────────────────────────────────────────────────────────
+
+model Notification {
+  id         String              @id @default(cuid())
+  userId     String
+  channel    NotificationChannel
+  eventType  String
+  payload    Json
+  delivered  Boolean             @default(false)
+  retryCount Int                 @default(0)
+  failedAt   DateTime?
+  createdAt  DateTime            @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+// ─── AuditLog ─────────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id           String          @id @default(cuid())
+  actorId      String?
+  actorAddress String?
+  actionType   AuditActionType
+  entityType   String
+  entityId     String
+  beforeState  Json?
+  afterState   Json?
+  metadata     Json?
+  contentHash  String
+  previousHash String?
+  createdAt    DateTime        @default(now())
+
+  actor User?  @relation("ActorLogs", fields: [actorId], references: [id])
+  trade Trade? @relation("TradeLogs", fields: [entityId], references: [id])
+}
+
+// ─── RiskConfig ───────────────────────────────────────────────────────────────
+
+model RiskConfig {
+  id                    String   @id @default(cuid())
+  autoReleaseCutoff     Int      @default(80)
+  challengeWindowCutoff Int      @default(50)
+  manualReviewCutoff    Int      @default(50)
+  challengeWindowSeconds Int     @default(1800)
+  updatedBy             String
+  updatedAt             DateTime @updatedAt
+  createdAt             DateTime @default(now())
+}

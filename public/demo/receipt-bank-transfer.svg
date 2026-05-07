@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" font-family="monospace, sans-serif">
+  <!-- Background -->
+  <rect width="400" height="560" fill="#ffffff" rx="8"/>
+  <!-- Header bar -->
+  <rect width="400" height="80" fill="#1a3a6b" rx="8"/>
+  <rect y="72" width="400" height="8" fill="#1a3a6b"/>
+  <!-- Bank logo area -->
+  <circle cx="40" cy="40" r="22" fill="#ffffff" opacity="0.2"/>
+  <text x="40" y="46" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">B</text>
+  <!-- Bank name -->
+  <text x="72" y="32" fill="#ffffff" font-size="16" font-weight="bold">FIRST NATIONAL BANK</text>
+  <text x="72" y="52" fill="#a0c4ff" font-size="11">International Wire Division</text>
+  <text x="72" y="68" fill="#a0c4ff" font-size="10">www.fnb-international.com</text>
+
+  <!-- Receipt title -->
+  <text x="200" y="112" text-anchor="middle" fill="#1a3a6b" font-size="15" font-weight="bold">PAYMENT CONFIRMATION</text>
+  <line x1="20" y1="120" x2="380" y2="120" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Status badge -->
+  <rect x="140" y="128" width="120" height="24" fill="#d4edda" rx="12"/>
+  <text x="200" y="144" text-anchor="middle" fill="#155724" font-size="12" font-weight="bold">✓ COMPLETED</text>
+
+  <!-- Transaction details -->
+  <text x="20" y="178" fill="#666" font-size="10">TRANSACTION REFERENCE</text>
+  <text x="20" y="194" fill="#111" font-size="13" font-weight="bold">FNB-2024-TXN-847291</text>
+
+  <line x1="20" y1="204" x2="380" y2="204" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="222" fill="#666" font-size="10">DATE &amp; TIME</text>
+  <text x="20" y="238" fill="#111" font-size="12">2024-01-15  14:32:07 UTC</text>
+
+  <line x1="20" y1="248" x2="380" y2="248" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="266" fill="#666" font-size="10">SENDER</text>
+  <text x="20" y="282" fill="#111" font-size="12">Alice Nakamoto</text>
+  <text x="20" y="296" fill="#888" font-size="10">Acc: ****4821  |  Sort: 20-14-53</text>
+
+  <line x1="20" y1="306" x2="380" y2="306" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="324" fill="#666" font-size="10">RECIPIENT</text>
+  <text x="20" y="340" fill="#111" font-size="12">Bob Okonkwo</text>
+  <text x="20" y="354" fill="#888" font-size="10">Acc: ****7734  |  Sort: 30-96-12</text>
+
+  <line x1="20" y1="364" x2="380" y2="364" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="382" fill="#666" font-size="10">PAYMENT REFERENCE</text>
+  <text x="20" y="398" fill="#111" font-size="12">APPEN-TRADE-0042</text>
+
+  <line x1="20" y1="408" x2="380" y2="408" stroke="#e0e0e0" stroke-width="1.5"/>
+
+  <!-- Amount section -->
+  <rect x="20" y="418" width="360" height="64" fill="#f8f9ff" rx="6"/>
+  <text x="36" y="440" fill="#666" font-size="10">AMOUNT TRANSFERRED</text>
+  <text x="36" y="468" fill="#1a3a6b" font-size="28" font-weight="bold">USD 500.00</text>
+  <text x="340" y="468" text-anchor="end" fill="#888" font-size="10">Fee: USD 2.50</text>
+
+  <!-- Footer -->
+  <line x1="20" y1="498" x2="380" y2="498" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="200" y="516" text-anchor="middle" fill="#aaa" font-size="9">This is an official payment receipt. Keep for your records.</text>
+  <text x="200" y="530" text-anchor="middle" fill="#aaa" font-size="9">First National Bank Ltd. Reg. No. 1994/003855/06</text>
+  <text x="200" y="548" text-anchor="middle" fill="#ccc" font-size="8">Generated: 2024-01-15T14:32:07Z  |  Ref: FNB-2024-TXN-847291</text>
+</svg>

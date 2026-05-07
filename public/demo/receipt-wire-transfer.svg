@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="580" viewBox="0 0 400 580" font-family="monospace, sans-serif">
+  <!-- Background -->
+  <rect width="400" height="580" fill="#ffffff" rx="8"/>
+  <!-- Header bar -->
+  <rect width="400" height="80" fill="#2c3e50" rx="8"/>
+  <rect y="72" width="400" height="8" fill="#2c3e50"/>
+  <!-- Globe icon -->
+  <circle cx="40" cy="40" r="22" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="40" cy="40" rx="10" ry="22" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  <line x1="18" y1="40" x2="62" y2="40" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+  <!-- Bank name -->
+  <text x="72" y="32" fill="#ffffff" font-size="15" font-weight="bold">SWIFT GLOBAL BANK</text>
+  <text x="72" y="50" fill="#a0b4c8" font-size="11">International Wire Transfer</text>
+  <text x="72" y="66" fill="#a0b4c8" font-size="10">SWIFT/BIC: SGBKUS33XXX</text>
+
+  <!-- Receipt title -->
+  <text x="200" y="110" text-anchor="middle" fill="#2c3e50" font-size="15" font-weight="bold">WIRE TRANSFER CONFIRMATION</text>
+  <line x1="20" y1="118" x2="380" y2="118" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Status badge -->
+  <rect x="130" y="126" width="140" height="24" fill="#d4edda" rx="12"/>
+  <text x="200" y="142" text-anchor="middle" fill="#155724" font-size="12" font-weight="bold">✓ FUNDS DELIVERED</text>
+
+  <!-- Transaction details -->
+  <text x="20" y="178" fill="#666" font-size="10">SWIFT REFERENCE NUMBER</text>
+  <text x="20" y="194" fill="#111" font-size="13" font-weight="bold">SGBK240115847291US</text>
+
+  <line x1="20" y1="204" x2="380" y2="204" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="222" fill="#666" font-size="10">VALUE DATE</text>
+  <text x="20" y="238" fill="#111" font-size="12">2024-01-15  (Settlement: T+1)</text>
+
+  <line x1="20" y1="248" x2="380" y2="248" stroke="#f0f0f0" stroke-width="1"/>
+
+  <!-- Sender block -->
+  <text x="20" y="266" fill="#666" font-size="10">ORDERING CUSTOMER (SENDER)</text>
+  <text x="20" y="282" fill="#111" font-size="12">Alice Nakamoto</text>
+  <text x="20" y="296" fill="#888" font-size="10">IBAN: US64 SVBK 0000 0000 1234 5678</text>
+  <text x="20" y="310" fill="#888" font-size="10">Swift Global Bank, New York, USA</text>
+
+  <line x1="20" y1="320" x2="380" y2="320" stroke="#f0f0f0" stroke-width="1"/>
+
+  <!-- Recipient block -->
+  <text x="20" y="338" fill="#666" font-size="10">BENEFICIARY (RECIPIENT)</text>
+  <text x="20" y="354" fill="#111" font-size="12">Bob Okonkwo</text>
+  <text x="20" y="368" fill="#888" font-size="10">IBAN: GB29 NWBK 6016 1331 9268 19</text>
+  <text x="20" y="382" fill="#888" font-size="10">Barclays Bank PLC, London, UK</text>
+  <text x="20" y="396" fill="#888" font-size="10">BIC: BARCGB22XXX</text>
+
+  <line x1="20" y1="406" x2="380" y2="406" stroke="#f0f0f0" stroke-width="1"/>
+
+  <text x="20" y="424" fill="#666" font-size="10">REMITTANCE INFORMATION</text>
+  <text x="20" y="440" fill="#111" font-size="12">APPEN-TRADE-0042</text>
+
+  <line x1="20" y1="450" x2="380" y2="450" stroke="#e0e0e0" stroke-width="1.5"/>
+
+  <!-- Amount section -->
+  <rect x="20" y="460" width="360" height="64" fill="#f5f7fa" rx="6"/>
+  <text x="36" y="482" fill="#666" font-size="10">AMOUNT TRANSFERRED</text>
+  <text x="36" y="510" fill="#2c3e50" font-size="28" font-weight="bold">USD 500.00</text>
+  <text x="340" y="510" text-anchor="end" fill="#888" font-size="10">Fee: USD 15.00</text>
+
+  <!-- Footer -->
+  <line x1="20" y1="540" x2="380" y2="540" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="200" y="556" text-anchor="middle" fill="#aaa" font-size="9">This document is an official wire transfer confirmation.</text>
+  <text x="200" y="568" text-anchor="middle" fill="#aaa" font-size="9">Swift Global Bank Ltd. Member FDIC. SWIFT: SGBKUS33XXX</text>
+</svg>

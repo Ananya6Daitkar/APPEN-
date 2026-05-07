@@ -1,0 +1,186 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║                  APPEN HACKATHON WINNING PITCH VIDEO SCRIPT                   ║
+║                         5-Minute Pitch + Website Walkthrough                  ║
+║                              Divided Between 2 People                         ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📦 WHAT YOU GET:
+
+✅ PITCH_VIDEO_SCRIPT.md
+   - Complete 5-minute pitch script
+   - Website walkthrough with exact URLs
+   - Divided between Presenter A (Hacker) and Presenter B (Storyteller)
+   - 5 winning moments highlighted
+   - Pre-demo checklist
+   - Recording tips
+
+✅ PITCH_QUICK_REFERENCE.md
+   - Quick reference card for during presentation
+   - 5-minute structure at a glance
+   - Presenter handoffs
+   - Website URLs in order
+   - Key actions and visuals
+   - Key quotes
+   - Success criteria
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 THE 5-MINUTE PITCH FLOW:
+
+0:00–0:05   Opening Hook (A)
+            "Every day, $2 billion in P2P crypto trades fail..."
+
+0:05–0:30   Problem & Solution (A + B)
+            Why existing solutions fail + 3-layer solution
+
+0:30–0:45   Landing Page (A)
+            https://localhost:3000
+            Show 3D orbit, how it works
+
+0:45–1:15   Marketplace (B)
+            https://localhost:3000/marketplace
+            Show offer book, reputation badge
+
+1:15–2:30   Proof Upload & OCR (A + B) ⭐ CONFETTI MOMENT
+            https://localhost:3000/trade/[id]
+            Drag receipt → OCR extraction → Trust score → CONFETTI 🎉
+
+2:30–3:15   Dispute Queue (B + A)
+            https://localhost:3000/disputes
+            Show case cards, priority badges, AI assessment
+
+3:15–4:00   Admin & Reputation (A + B)
+            https://localhost:3000/admin
+            https://localhost:3000/leaderboard
+            Show audit trail, on-chain reputation
+
+4:00–4:30   Analytics (A + B)
+            https://localhost:3000/analytics
+            Show 5 real-time charts
+
+4:30–5:00   Close (A + B)
+            Vision statement, closing hook
+
+════════════════════════════════════════════════════════════════════════════════
+
+🏆 THE 5 WINNING MOMENTS:
+
+1. Fake Receipt Reveal (0:10)
+   Show real receipt, show fake receipt created in Photoshop
+   → Judges understand the problem
+
+2. Confetti Auto-Release (2:30) ⭐ THE HIGHLIGHT
+   Upload receipt → OCR extraction → Trust score animates → CONFETTI EXPLODES 🎉
+   → Judges see speed and automation
+
+3. Dispute Queue (2:45)
+   Show animated case cards with priority badges (red/amber/blue)
+   → Judges see intelligent case management
+
+4. Reputation Leaderboard (3:45)
+   Show animated podium with top 3 traders
+   → Judges see the incentive structure
+
+5. Closing Hook (4:55)
+   "APPEN is the immune system for P2P crypto trading"
+   → Judges remember the vision
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎤 PRESENTER ROLES:
+
+PRESENTER A (The Hacker):
+  - Fast-talking, technical, confident
+  - Explains architecture, fraud detection, smart contract
+  - Segments: Opening, Problem, Landing, Proof Upload (OCR), Admin, Close
+
+PRESENTER B (The Storyteller):
+  - Warm, relatable, visionary
+  - Shows user journey, impact, vision
+  - Segments: Problem, Marketplace, Proof Upload (confetti), Dispute, Reputation, Analytics, Close
+
+════════════════════════════════════════════════════════════════════════════════
+
+🌐 WEBSITE URLS (In Order):
+
+1. https://localhost:3000                    Landing page
+2. https://localhost:3000/marketplace        Offer book
+3. https://localhost:3000/trade/[id]         Trade detail + proof upload
+4. https://localhost:3000/disputes           Dispute queue
+5. https://localhost:3000/disputes/[id]      Dispute detail
+6. https://localhost:3000/admin              Admin dashboard
+7. https://localhost:3000/leaderboard        Reputation leaderboard
+8. https://localhost:3000/analytics          Real-time analytics
+
+════════════════════════════════════════════════════════════════════════════════
+
+💬 KEY QUOTES:
+
+Opening:
+  "Every day, $2 billion in P2P crypto trades fail because of one problem: trust."
+
+Solution:
+  "Non-custodial. AI-verified. On-chain reputation."
+
+Magic Moment:
+  "Funds released in SECONDS. Not hours. Not days. Seconds."
+
+Reputation:
+  "This is on-chain. It's immutable. It's permanent."
+
+Closing:
+  "APPEN is the immune system for P2P crypto trading. We're not building trust.
+   We're building the infrastructure that makes trust unnecessary."
+
+════════════════════════════════════════════════════════════════════════════════
+
+📋 PRE-DEMO CHECKLIST:
+
+Infrastructure:
+  ☐ Docker running: docker compose up -d
+  ☐ Database migrated: npx prisma migrate dev
+  ☐ Database seeded: npx prisma db seed
+  ☐ Dev server running: npm run dev
+  ☐ Demo data loaded: curl http://localhost:3000/api/analytics/demo-seed
+
+Browser:
+  ☐ MetaMask connected to Base Sepolia
+  ☐ All URLs bookmarked
+  ☐ Demo wallet addresses ready
+  ☐ Demo receipt files ready (public/demo/)
+
+Presentation:
+  ☐ Presenter notes printed
+  ☐ Backup screenshots ready
+  ☐ Full run-through completed
+  ☐ Timing practiced (exactly 5 minutes)
+  ☐ Confidence is high 🚀
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 SUCCESS CRITERIA:
+
+Your pitch is winning if:
+✅ You follow the script exactly
+✅ You let animations complete (don't rush)
+✅ You build to the confetti moment (2:30)
+✅ You emphasize the 5 winning moments
+✅ You stay within 5 minutes (±10 seconds)
+✅ Judges remember: "This is the future of P2P trading"
+
+════════════════════════════════════════════════════════════════════════════════
+
+🚀 QUICK START:
+
+1. Read PITCH_VIDEO_SCRIPT.md (full script)
+2. Print PITCH_QUICK_REFERENCE.md (keep handy during presentation)
+3. Practice full run-through 2-3 times
+4. Execute: Follow the script, let animations complete, build to confetti
+
+════════════════════════════════════════════════════════════════════════════════
+
+Good luck! You've got this. Go win the hackathon! 🚀
+
+════════════════════════════════════════════════════════════════════════════════
