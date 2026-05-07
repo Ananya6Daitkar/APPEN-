@@ -11,6 +11,9 @@
     "db:migrate": "prisma migrate dev",
     "db:seed": "ts-node prisma/seed.ts"
   },
+  "overrides": {
+    "use-sync-external-store": "^1.2.2"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.682.0",
     "@prisma/client": "^5.22.0",
