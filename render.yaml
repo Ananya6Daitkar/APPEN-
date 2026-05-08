@@ -7,7 +7,7 @@ services:
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
-        value: 18.17.0
+        value: 20.11.0
       - key: DATABASE_URL
         fromDatabase:
           name: appen-db
@@ -20,10 +20,16 @@ services:
         generateValue: true
       - key: REDIS_URL
         value: redis://localhost:6379
-      - key: NEXT_PUBLIC_APP_URL
-        sync: false
-      - key: NEXTAUTH_URL
-        sync: false
+      - key: S3_ENDPOINT
+        value: http://localhost:9000
+      - key: S3_ACCESS_KEY
+        value: minioadmin
+      - key: S3_SECRET_KEY
+        value: minioadmin
+      - key: S3_BUCKET
+        value: appen-proofs
+      - key: S3_REGION
+        value: us-east-1
 
 databases:
   - name: appen-db
