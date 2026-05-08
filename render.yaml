@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: appen-p2p-escrow
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: appen-db
+          property: connectionString
+      - key: DEMO_MODE
+        value: true
+      - key: NEXT_PUBLIC_DEMO_MODE
+        value: true
+      - key: JWT_SECRET
+        generateValue: true
+      - key: REDIS_URL
+        value: redis://localhost:6379
+      - key: NEXT_PUBLIC_APP_URL
+        sync: false
+      - key: NEXTAUTH_URL
+        sync: false
+
+databases:
+  - name: appen-db
+    databaseName: appen
+    plan: free
