@@ -31,7 +31,7 @@ const RAILS = ['bank_transfer', 'mobile_money', 'wire_transfer'];
 const FIAT_CURRENCIES = ['USD', 'EUR', 'GBP', 'NGN', 'KES'];
 
 async function main() {
-  console.log('🌱 Starting seed — clearing existing data...');
+  console.log('[SEED] Starting seed — clearing existing data...');
 
   // Clear in reverse dependency order
   await prisma.resolverCase.deleteMany();
@@ -52,7 +52,7 @@ async function main() {
 
   // ─── 1. Create demo users ──────────────────────────────────────────────────
 
-  console.log('👤 Creating demo users...');
+  console.log('[SEED] Creating demo users...');
 
   const buyer = await prisma.user.create({
     data: { walletAddress: BUYER_ADDR, kycTier: 1 },
@@ -100,7 +100,7 @@ async function main() {
 
   // ─── 4. Active offers ──────────────────────────────────────────────────────
 
-  console.log('📋 Creating 10 active offers...');
+  console.log('[SEED] Creating 10 active offers...');
 
   for (let i = 0; i < 10; i++) {
     const coin = STABLECOINS[i % 2];
@@ -371,9 +371,9 @@ async function main() {
     });
   }
 
-  console.log('✅ Created 5 disputed trades with proofs, OCR, risk scores, disputes, and resolver cases');
+  console.log('[SEED] Created 5 disputed trades with proofs, OCR, risk scores, disputes, and resolver cases');
 
-  console.log('\n🎉 Seed complete!');
+  console.log('\n[SEED] Seed complete!');
   console.log(`   Buyer:    ${BUYER_ADDR}`);
   console.log(`   Seller:   ${SELLER_ADDR}`);
   console.log(`   Resolver: ${RESOLVER_ADDR}`);

@@ -245,7 +245,7 @@ export default function CreateOfferPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <GlassCard className="p-8 max-w-sm w-full text-center space-y-4">
-          <div className="text-4xl">🔒</div>
+          <div className="text-4xl font-bold text-brand-amber">LOCK</div>
           <h2 className="text-xl font-bold text-slate-100">Connect your wallet</h2>
           <p className="text-slate-400 text-sm">You need to connect a wallet to create an offer.</p>
           <div className="flex justify-center">
@@ -260,7 +260,7 @@ export default function CreateOfferPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <GlassCard className="p-8 max-w-sm w-full text-center space-y-4">
-          <div className="text-5xl">🎉</div>
+          <div className="text-4xl font-bold text-brand-emerald">SUCCESS</div>
           <h2 className="text-xl font-bold text-brand-emerald">Offer is live!</h2>
           <p className="text-slate-400 text-sm">
             Your {form.stablecoin} offer has been locked in escrow and published to the marketplace.

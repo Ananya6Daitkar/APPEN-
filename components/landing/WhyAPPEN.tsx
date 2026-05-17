@@ -3,37 +3,12 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { GlassCard } from '@/components/shared/GlassCard'
+import { WHY_APPEN } from '@/lib/copy/landing'
 
-const comparisons = [
-  {
-    feature: 'Custody',
-    appen: 'Non-custodial smart contract',
-    centralized: 'Platform holds your funds',
-    icon: '🔐',
-    glow: 'emerald' as const,
-  },
-  {
-    feature: 'Proof Verification',
-    appen: 'AI-verified OCR + risk scoring',
-    centralized: 'Manual review (hours/days)',
-    icon: '🤖',
-    glow: 'blue' as const,
-  },
-  {
-    feature: 'Reputation',
-    appen: 'On-chain, portable, tamper-proof',
-    centralized: 'Siloed, platform-controlled',
-    icon: '⭐',
-    glow: 'violet' as const,
-  },
-  {
-    feature: 'Disputes',
-    appen: 'Structured arbitration + audit trail',
-    centralized: 'Opaque, slow, biased',
-    icon: '⚖️',
-    glow: 'emerald' as const,
-  },
-]
+const comparisonsWithStyles = WHY_APPEN.comparisons.map((comp, i) => ({
+  ...comp,
+  glow: (['emerald', 'blue', 'violet', 'emerald'] as const)[i],
+}))
 
 export function WhyAPPEN() {
   const ref = useRef<HTMLDivElement>(null)
@@ -51,14 +26,14 @@ export function WhyAPPEN() {
           className="text-center mb-16"
         >
           <p className="text-xs font-semibold text-brand-emerald uppercase tracking-widest mb-3">The Difference</p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Why APPEN?</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{WHY_APPEN.sectionTitle}</h2>
           <p className="text-slate-400 max-w-xl mx-auto">
-            Built different from the ground up — not just another P2P exchange.
+            {WHY_APPEN.sectionSubtitle}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-          {comparisons.map((c, i) => (
+          {comparisonsWithStyles.map((c, i) => (
             <motion.div
               key={c.feature}
               initial={{ opacity: 0, x: i % 2 === 0 ? -24 : 24 }}
@@ -70,7 +45,7 @@ export function WhyAPPEN() {
                   <motion.span
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     transition={{ type: 'spring', stiffness: 300 }}
-                    className="text-3xl flex-shrink-0 cursor-default"
+                    className="text-sm font-bold flex-shrink-0 cursor-default"
                   >
                     {c.icon}
                   </motion.span>

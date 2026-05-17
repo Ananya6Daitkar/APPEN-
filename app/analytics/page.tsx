@@ -37,7 +37,7 @@ interface WalkthroughStep {
 
 const WALKTHROUGH_STEPS: WalkthroughStep[] = [
   {
-    icon: '🔑',
+    icon: 'KEY',
     title: 'Connect as Seller',
     description:
       'Use the demo seller wallet to create a new offer. Set your stablecoin (USDC or USDT), amount, fiat currency, and payment rail.',
@@ -45,7 +45,7 @@ const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     link: { href: '/create-offer', label: 'Go to Create Offer →' },
   },
   {
-    icon: '🛒',
+    icon: 'CART',
     title: 'Connect as Buyer',
     description:
       'Switch to the demo buyer wallet and browse the marketplace. Accept the seller\'s offer to initiate an escrow trade.',
@@ -53,7 +53,7 @@ const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     link: { href: '/marketplace', label: 'Go to Marketplace →' },
   },
   {
-    icon: '📄',
+    icon: 'UPLOAD',
     title: 'Upload Payment Proof',
     description:
       'As the buyer, upload a demo payment receipt (JPEG/PNG). The file is stored in MinIO and hashed on-chain.',
@@ -100,7 +100,7 @@ const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     link: { href: '/disputes', label: 'Open Resolver Console →' },
   },
   {
-    icon: '📊',
+    icon: 'CHART',
     title: 'Admin Dashboard',
     description:
       'Connect as admin to view platform metrics, manage user KYC tiers, configure risk thresholds, and review the full audit log.',

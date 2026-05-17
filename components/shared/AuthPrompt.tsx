@@ -41,8 +41,8 @@ export function AuthPrompt({ message = 'Sign in to access this page.' }: AuthPro
 
   return (
     <GlassCard className="p-8 flex flex-col items-center gap-5 text-center border-brand-amber/20">
-      <div className="w-12 h-12 rounded-full bg-brand-amber/10 border border-brand-amber/20 flex items-center justify-center text-2xl">
-        🔑
+      <div className="w-12 h-12 rounded-full bg-brand-amber/10 border border-brand-amber/20 flex items-center justify-center text-xl font-bold text-brand-amber">
+        KEY
       </div>
       <div>
         <p className="text-slate-200 font-semibold">Sign In Required</p>

@@ -28,7 +28,7 @@ export const TRADE_STATE_TOKENS: Record<TradeState, TradeStateToken> = {
     label: 'Created',
     colorClasses: 'text-slate-300 border-slate-600 bg-slate-700/30',
     hex: '#94A3B8',
-    icon: '🕐',
+    icon: 'PENDING',
   },
   FUNDED: {
     label: 'Funded',
@@ -105,7 +105,7 @@ export const RECOMMENDATION_TOKENS: Record<RiskRecommendation, RecommendationTok
     label: 'Manual Review',
     colorClasses: 'text-brand-amber border-brand-amber bg-brand-amber/20',
     hex: '#F59E0B',
-    icon: '🔍',
+    icon: 'REVIEW',
     description: 'Trust score < 50. A resolver will review the evidence.',
   },
 }

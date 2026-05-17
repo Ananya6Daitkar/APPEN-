@@ -10,9 +10,9 @@ export const HERO = {
   ctaPrimary: 'Launch App',
   ctaSecondary: 'View Demo',
   trustBadges: [
-    '✓ OpenZeppelin audited',
-    '✓ Base Sepolia',
-    '✓ Polygon Mumbai',
+    'OpenZeppelin audited',
+    'Base Sepolia',
+    'Polygon Mumbai',
   ],
 } as const
 
@@ -21,19 +21,19 @@ export const PROBLEMS = {
   sectionSubtitle: 'Every P2P trade carries hidden risks. APPEN eliminates them systematically.',
   items: [
     {
-      icon: '🔓',
+      icon: 'TRUST',
       title: 'The Trust Gap',
       description:
         'P2P crypto trades require trusting a stranger with your money. One party always has to go first — and hope the other follows through.',
     },
     {
-      icon: '🧾',
+      icon: 'RECEIPT',
       title: 'Fiat is Unverifiable',
       description:
         'Bank transfers and mobile money receipts are easy to fake. Existing platforms rely on manual review, creating delays and fraud risk.',
     },
     {
-      icon: '⚖️',
+      icon: 'DISPUTE',
       title: 'Manual Disputes',
       description:
         "When trades go wrong, resolution is slow, opaque, and often biased. There's no structured evidence trail or accountable arbitration.",
@@ -46,27 +46,27 @@ export const HOW_IT_WORKS = {
   sectionSubtitle: 'Five steps from offer to settlement — fully automated.',
   steps: [
     {
-      icon: '🔒',
+      icon: 'LOCK',
       title: 'Lock',
       description: 'Seller locks USDC/USDT into non-custodial escrow smart contract.',
     },
     {
-      icon: '💸',
+      icon: 'PAY',
       title: 'Send Fiat',
       description: 'Buyer sends fiat via bank transfer, mobile money, or any supported rail.',
     },
     {
-      icon: '📄',
+      icon: 'UPLOAD',
       title: 'Upload Proof',
       description: 'Buyer uploads payment receipt. SHA-256 hash stored on-chain immediately.',
     },
     {
-      icon: '🤖',
+      icon: 'VERIFY',
       title: 'AI Verify',
       description: 'OCR engine extracts receipt data. Risk engine scores confidence 0–100.',
     },
     {
-      icon: '✅',
+      icon: 'RELEASE',
       title: 'Release',
       description: 'High-confidence proofs auto-release. Disputes go to structured arbitration.',
     },
@@ -78,25 +78,25 @@ export const WHY_APPEN = {
   sectionSubtitle: 'Built different from the ground up — not just another P2P exchange.',
   comparisons: [
     {
-      icon: '🔐',
+      icon: 'CUSTODY',
       feature: 'Custody',
       appen: 'Non-custodial smart contract',
       centralized: 'Platform holds your funds',
     },
     {
-      icon: '🤖',
+      icon: 'VERIFY',
       feature: 'Proof Verification',
       appen: 'AI-verified OCR + risk scoring',
       centralized: 'Manual review (hours/days)',
     },
     {
-      icon: '⭐',
+      icon: 'REPUTATION',
       feature: 'Reputation',
       appen: 'On-chain, portable, tamper-proof',
       centralized: 'Siloed, platform-controlled',
     },
     {
-      icon: '⚖️',
+      icon: 'DISPUTE',
       feature: 'Disputes',
       appen: 'Structured arbitration + audit trail',
       centralized: 'Opaque, slow, biased',

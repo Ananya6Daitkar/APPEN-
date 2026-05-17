@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('\n📋 DEMO TRADE IDs\n');
+  console.log('\n[DEMO TRADE IDs]\n');
   
   // Get 10 completed trades
   const completedTrades = await prisma.trade.findMany({

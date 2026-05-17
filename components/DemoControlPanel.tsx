@@ -93,7 +93,7 @@ export function DemoControlPanel({ tradeId, currentState, onStateChange }: DemoC
   }
 
   async function triggerFakeNotification() {
-    showToast('🔔 Trade state updated notification sent')
+    showToast('[NOTIFY] Trade state updated notification sent')
   }
 
   return (
@@ -184,7 +184,7 @@ export function DemoControlPanel({ tradeId, currentState, onStateChange }: DemoC
                   onClick={triggerFakeNotification}
                   className="flex-1 py-1.5 rounded-lg text-xs border border-brand-blue/30 text-brand-blue hover:bg-brand-blue/10 transition-colors"
                 >
-                  🔔 Notify
+                  Notify
                 </button>
               </div>
             </motion.div>

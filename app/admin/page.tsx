@@ -15,8 +15,8 @@ import { authFetch } from '@/lib/auth/authFetch'
 type Tab = 'metrics' | 'users' | 'risk' | 'audit'
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
-  { id: 'metrics', label: 'Metrics', icon: '📊' },
-  { id: 'users', label: 'User Management', icon: '👤' },
+  { id: 'metrics', label: 'Metrics', icon: 'CHART' },
+  { id: 'users', label: 'User Management', icon: 'USER' },
   { id: 'risk', label: 'Risk Config', icon: '⚙️' },
   { id: 'audit', label: 'Audit Log', icon: '📋' },
 ]

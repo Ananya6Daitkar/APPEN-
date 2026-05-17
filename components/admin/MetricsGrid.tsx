@@ -92,7 +92,7 @@ function TrustScoreHistogram({ distribution }: { distribution: Record<string, nu
       <GlassCard className="p-5 col-span-full lg:col-span-2">
         <div className="flex items-center justify-between mb-4">
           <span className="text-xs text-slate-500 font-medium uppercase tracking-wider">Trust Score Distribution</span>
-          <span className="text-lg">📊</span>
+          <span className="text-lg">CHART</span>
         </div>
         <ResponsiveContainer width="100%" height={160}>
           <BarChart data={data} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
@@ -143,7 +143,7 @@ export function MetricsGrid({ metrics }: MetricsGridProps) {
         label="Active Trades"
         value={metrics.activeTrades}
         accent="text-brand-blue"
-        icon="⚡"
+        icon="ACTIVE"
         delay={0}
       />
       <MetricCard
@@ -151,14 +151,14 @@ export function MetricsGrid({ metrics }: MetricsGridProps) {
         value={metrics.lockedStablecoinValue}
         format={(v) => `$${v.toLocaleString()}`}
         accent="text-brand-emerald"
-        icon="🔒"
+        icon="LOCKED"
         delay={0.08}
       />
       <MetricCard
         label="Open Disputes"
         value={metrics.openDisputeCount}
         accent="text-brand-red"
-        icon="⚖️"
+        icon="DISPUTE"
         delay={0.16}
       />
       <MetricCard
@@ -166,7 +166,7 @@ export function MetricsGrid({ metrics }: MetricsGridProps) {
         value={metrics.avgResolutionTimeHours}
         format={(v) => `${v.toFixed(1)}h`}
         accent="text-brand-amber"
-        icon="⏱️"
+        icon="TIME"
         delay={0.24}
       />
       <div className="sm:col-span-2 lg:col-span-4">

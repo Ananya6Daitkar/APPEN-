@@ -16,10 +16,10 @@ const RAIL_LABELS: Record<string, string> = {
 }
 
 const RAIL_ICONS: Record<string, string> = {
-  bank_transfer: '🏦',
-  mobile_money: '📱',
-  wire_transfer: '🌐',
-  cash_deposit: '💵',
+  bank_transfer: 'B',
+  mobile_money: 'M',
+  wire_transfer: 'W',
+  cash_deposit: 'C',
 }
 
 interface OfferCardProps {
@@ -120,7 +120,7 @@ export function OfferCard({ offer, index = 0 }: OfferCardProps) {
               key={rail}
               className="text-xs px-2 py-0.5 rounded-full bg-surface-700/60 border border-[rgba(255,255,255,0.06)] text-slate-300 flex items-center gap-1"
             >
-              <span>{RAIL_ICONS[rail] ?? '💳'}</span>
+              <span>{RAIL_ICONS[rail] ?? 'P'}</span>
               {RAIL_LABELS[rail] ?? rail}
             </span>
           ))}

@@ -56,7 +56,7 @@ const RECOMMENDATION_CONFIG = {
   manual_review: {
     label: 'Manual Review',
     color: 'bg-brand-violet/20 text-brand-violet border-brand-violet/30',
-    icon: '👁',
+    icon: 'EYE',
   },
 }
 
