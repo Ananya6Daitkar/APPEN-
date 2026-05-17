@@ -20,7 +20,7 @@ async function main() {
     orderBy: { createdAt: 'desc' },
   });
 
-  console.log('✅ Completed Trades (RELEASED):');
+  console.log('Completed Trades (RELEASED):');
   completedTrades.forEach((trade, i) => {
     console.log(`  ${i + 1}. ${trade.id}`);
     console.log(`     ${trade.amount} ${trade.stablecoin} @ ${trade.fiatCurrency}`);
@@ -40,7 +40,7 @@ async function main() {
     orderBy: { createdAt: 'desc' },
   });
 
-  console.log('\n⚠️  Disputed Trades:');
+  console.log('\nDisputed Trades:');
   disputedTrades.forEach((trade, i) => {
     console.log(`  ${i + 1}. ${trade.id}`);
     console.log(`     ${trade.amount} ${trade.stablecoin} @ ${trade.fiatCurrency}`);
@@ -62,7 +62,7 @@ async function main() {
     orderBy: { createdAt: 'desc' },
   });
 
-  console.log('\n⚖️  Dispute IDs (for /disputes/[id] pages):');
+  console.log('\nDispute IDs (for /disputes/[id] pages):');
   disputes.forEach((dispute, i) => {
     const caseId = dispute.resolverCase?.id || 'no-case';
     console.log(`  ${i + 1}. Dispute ID: ${dispute.id}`);
@@ -71,7 +71,7 @@ async function main() {
     console.log(`     Decision: ${dispute.decision}`);
   });
 
-  console.log('\n📊 Summary:');
+  console.log('\nSummary:');
   console.log(`  Total Completed Trades: ${completedTrades.length}`);
   console.log(`  Total Disputed Trades: ${disputedTrades.length}`);
   console.log(`  Total Disputes: ${disputes.length}`);
@@ -80,7 +80,7 @@ async function main() {
 
 main()
   .catch((e) => {
-    console.error('❌ Error:', e);
+    console.error('Error:', e);
     process.exit(1);
   })
   .finally(() => prisma.$disconnect());

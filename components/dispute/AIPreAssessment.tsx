@@ -236,7 +236,7 @@ export function AIPreAssessment({ caseId }: { caseId: string }) {
                           }}
                           className="text-xs px-2.5 py-1 rounded-full bg-brand-red/15 border border-brand-red/30 text-brand-red"
                         >
-                          ⚠ {flag}
+                          {flag}
                         </motion.span>
                       ))}
                     </div>

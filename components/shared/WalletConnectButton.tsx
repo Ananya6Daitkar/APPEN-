@@ -8,10 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { setStoredToken, clearStoredToken } from '@/lib/auth/authFetch'
 
 const DEMO_WALLETS = [
-  { label: 'Buyer', address: '0xBuyer1111111111111111111111111111111111', icon: '🛒', desc: 'Accept offers, upload proofs' },
-  { label: 'Seller', address: '0xSeller222222222222222222222222222222222', icon: '💼', desc: 'Create offers, raise disputes' },
-  { label: 'Resolver', address: '0xResolver33333333333333333333333333333', icon: '⚖️', desc: 'Adjudicate disputes' },
-  { label: 'Admin', address: '0xAdmin4444444444444444444444444444444444', icon: '🔑', desc: 'Full platform access' },
+  { label: 'Buyer', address: '0xBuyer1111111111111111111111111111111111', icon: 'B', desc: 'Accept offers, upload proofs' },
+  { label: 'Seller', address: '0xSeller222222222222222222222222222222222', icon: 'S', desc: 'Create offers, raise disputes' },
+  { label: 'Resolver', address: '0xResolver33333333333333333333333333333', icon: 'R', desc: 'Adjudicate disputes' },
+  { label: 'Admin', address: '0xAdmin4444444444444444444444444444444444', icon: 'A', desc: 'Full platform access' },
 ]
 
 function DemoLoginButton() {

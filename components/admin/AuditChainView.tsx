@@ -75,7 +75,7 @@ export function AuditChainView({ logs }: AuditChainViewProps) {
             : 'bg-brand-red/10 border-brand-red/30 text-brand-red'
         }`}
       >
-        <span>{chainValid ? '✓' : '⚠'}</span>
+        <span>{chainValid ? 'Valid' : 'Warning'}</span>
         {chainValid ? 'Chain Valid — All hashes verified' : 'Chain Tampered — Hash mismatch detected'}
       </motion.div>
 

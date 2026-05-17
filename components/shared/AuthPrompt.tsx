@@ -6,10 +6,10 @@ import { GlassCard } from './GlassCard'
 import { setStoredToken } from '@/lib/auth/authFetch'
 
 const DEMO_WALLETS = [
-  { label: 'Buyer', address: '0xBuyer1111111111111111111111111111111111', icon: '🛒' },
-  { label: 'Seller', address: '0xSeller222222222222222222222222222222222', icon: '💼' },
-  { label: 'Resolver', address: '0xResolver33333333333333333333333333333', icon: '⚖️' },
-  { label: 'Admin', address: '0xAdmin4444444444444444444444444444444444', icon: '🔑' },
+  { label: 'Buyer', address: '0xBuyer1111111111111111111111111111111111', icon: 'B' },
+  { label: 'Seller', address: '0xSeller222222222222222222222222222222222', icon: 'S' },
+  { label: 'Resolver', address: '0xResolver33333333333333333333333333333', icon: 'R' },
+  { label: 'Admin', address: '0xAdmin4444444444444444444444444444444444', icon: 'A' },
 ]
 
 interface AuthPromptProps {

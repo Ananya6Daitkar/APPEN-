@@ -11,11 +11,11 @@ type DemoState = typeof DEMO_STATES[number]
 
 const STATE_LABELS: Record<DemoState, string> = {
   CREATED: 'Created',
-  FUNDED: 'Funded 🔒',
-  MARKED_PAID: 'Marked Paid 💸',
-  UNDER_REVIEW: 'Under Review 🔍',
-  DISPUTED: 'Disputed ⚠️',
-  RELEASED: 'Released 🎉',
+  FUNDED: 'Funded',
+  MARKED_PAID: 'Marked Paid',
+  UNDER_REVIEW: 'Under Review',
+  DISPUTED: 'Disputed',
+  RELEASED: 'Released',
 }
 
 interface DemoControlPanelProps {

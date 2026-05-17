@@ -235,7 +235,7 @@ export function AuditLogTable() {
             onClick={() => setViewMode(viewMode === 'table' ? 'chain' : 'table')}
             className="text-xs px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.08)] text-slate-400 hover:border-brand-violet/30 hover:text-brand-violet transition-colors"
           >
-            {viewMode === 'table' ? '⛓ Chain View' : '☰ Table View'}
+            {viewMode === 'table' ? 'Chain View' : 'Table View'}
           </button>
           <button
             onClick={() => exportCSV(logs)}
